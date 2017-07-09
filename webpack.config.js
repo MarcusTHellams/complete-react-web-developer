@@ -13,10 +13,10 @@ module.exports = {
         vendor: [
             'react', 'react-dom'
         ],
-        main: './src/index.js'
+        main: './src/index.tsx'
     },
     resolve: {
-        extensions: ['.jsx', '.js'] // note if using webpack 1 you'd also need a '' in the array as well
+        extensions: ['.tsx', '.ts', '.js'] // note if using webpack 1 you'd also need a '' in the array as well
     },
     devtool: 'inline-source-map',
     output: {
@@ -28,7 +28,12 @@ module.exports = {
         rules: [
             {
                 exclude: [
-                    /\.html$/, /\.(js|jsx)$/, /\.css$/, /\.scss$/, /\.json$/
+                    / \.html$ /,
+                    /\.(js|jsx)$/,
+                    /\.css$/,
+                    /\.scss$/,
+                    /\.json$/,
+                    /\.(ts)|(tsx)$/
                 ],
                 use: [
                     {
@@ -47,6 +52,19 @@ module.exports = {
                         options: {
                             presets: ['es2015', 'react']
                         }
+                    }
+                ]
+            }, {
+                test: /\.(ts)|(tsx)$/,
+                exclude: /node_modules/,
+                use: [
+                    {
+                        loader: 'babel-loader',
+                        options: {
+                            presets: ['es2015', 'react']
+                        }
+                    }, {
+                        loader: 'ts-loader'
                     }
                 ]
             }, {
