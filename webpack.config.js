@@ -28,7 +28,7 @@ module.exports = {
         rules: [
             {
                 exclude: [
-                    /\.html$ /,
+                    /\.html$/,
                     /\.(js|jsx)$/,
                     /\.css$/,
                     /\.scss$/,
@@ -121,8 +121,8 @@ module.exports = {
                     'common', 'vendor'
                 ],
                 minChunks: 2
-            })/*,
+            }),
         new HtmlWebpackPlugin({template: './src/index.html'}),
-        new BaseHrefWebpackPlugin({baseHref: '/'})*/
+        new BaseHrefWebpackPlugin({baseHref: '/'})
     ]
 };

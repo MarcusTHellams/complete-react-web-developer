@@ -1,17 +1,8 @@
 import React from 'react';
 import ReactDom from 'react-dom';
+import Greeter from './components/Greeter.comopnent';
 
-const Greeter = React.createClass({
-    render: function () {
-        return (
-            <div>
-                <h1>Hello React!!</h1>
-                <p>This is from the component</p>
-            </div>
-
-        );
-    }
-});
+const middleName = 'Timothy';
 
 ReactDom.render(
-    <Greeter/>, document.getElementById('app'), null);
+    <Greeter name={middleName} message="This is not from the component dummy"/>, document.getElementById('app'), null);
