@@ -2,7 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const htmlWebpackTemplate = require('html-webpack-template');
+// const htmlWebpackTemplate = require('html-webpack-template');
 
 const extractCSS = new ExtractTextPlugin('static/css/[name].css');
 const extractSass = new ExtractTextPlugin('static/css/[name].css');
@@ -28,12 +28,12 @@ module.exports = {
         rules: [
             {
                 exclude: [
-                    / \.html$ /,
+                    /\.html$ /,
                     /\.(js|jsx)$/,
                     /\.css$/,
                     /\.scss$/,
                     /\.json$/,
-                    /\.(ts)|(tsx)$/
+                    /\.(ts|tsx)$/
                 ],
                 use: [
                     {
@@ -121,8 +121,8 @@ module.exports = {
                     'common', 'vendor'
                 ],
                 minChunks: 2
-            }),
+            })/*,
         new HtmlWebpackPlugin({template: './src/index.html'}),
-        new BaseHrefWebpackPlugin({baseHref: '/'})
+        new BaseHrefWebpackPlugin({baseHref: '/'})*/
     ]
 };
