@@ -8,7 +8,7 @@
             "es2016"
         ],
         "baseUrl": "src",
-        "jsx": "preserve",
+        "jsx": "react",
         "target": "es2016",
         "module": "es2015",
         "moduleResolution": "node",

@@ -24,6 +24,7 @@ const GreeterForm = React.createClass({
 
     },
     render: function () {
+
         return (
             <div>
                 <form onSubmit={this.onFormSubmit}>
